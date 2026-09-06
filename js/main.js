@@ -55,18 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
         font-size: 0.96rem;
       }
 
-      .tidycal-embed-wrap {
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        min-height: 620px;
-        overflow: hidden;
-        padding: 10px;
-      }
-
       .booking-fallback {
         display: inline-flex;
-        margin-bottom: 22px;
+        margin-top: 8px;
       }
 
       .message-form-card {
@@ -92,26 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .booking-choice-grid {
           grid-template-columns: 1fr;
         }
-
-        .tidycal-embed-wrap {
-          min-height: 560px;
-        }
       }
     `;
     document.head.appendChild(style);
-  }
-
-  function loadTidyCalScript() {
-    const existingScript = document.querySelector("script[src='https://asset-tidycal.b-cdn.net/js/embed.js']");
-
-    if (existingScript) {
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.src = "https://asset-tidycal.b-cdn.net/js/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
   }
 
   function addContactBookingSection() {
@@ -167,12 +141,9 @@ document.addEventListener("DOMContentLoaded", function () {
               Ceremony dates are confirmed only after availability is verified, the service agreement is
               completed, and the required retainer is received.
             </div>
-            <a class="button button-secondary booking-fallback" href="https://tidycal.com/weddingssolutions/free-consultation-call" target="_blank" rel="noopener">
-              Open Booking Page
+            <a class="button button-secondary booking-fallback" href="https://calendly.com/pvazquez-weddingssolutions" target="_blank" rel="noopener noreferrer">
+              Schedule a Free Consultation
             </a>
-            <div class="tidycal-embed-wrap" aria-label="Free consultation booking calendar">
-              <div class="tidycal-embed" data-path="weddingssolutions/free-consultation-call"></div>
-            </div>
           </article>
 
           <article class="booking-card booking-card-secondary" id="message-card-shell"></article>
@@ -188,7 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     contactSection.remove();
-    loadTidyCalScript();
   }
 
   addContactBookingSection();
